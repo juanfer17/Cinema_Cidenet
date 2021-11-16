@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="body">
+    <div class="film">
+        <form name="filmForm" role="form" [formGroup]="filmForm" (ngSubmit)="film()" >
+            <img src="../../assets/img/film.png" width=50% alt="">
+            <h1>Agregar Pelicula</h1>
+            
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Titulo</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Genero</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="genreFilm">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Imagen</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="urlImage">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Duracion</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="duracion">
+            </mat-form-field>
+            
+            <br>
+            <mat-checkbox class="example-margin" color="primary" formControlName="activa">Activa</mat-checkbox>
+            <br>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Fecha</mat-label>
+                <input type="date" matInput autocomplete="off" formControlName="fechaFin">
+            </mat-form-field>
+    
+            <button type="submit" class="ancho boton" mat-raised-button color="primary" [disabled]="filmForm.invalid" (click)="film()">Agregar</button>
+
+        </form>
+    </div>
+</div>

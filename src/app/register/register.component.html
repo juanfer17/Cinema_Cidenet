@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="body">
+    <div class="register">
+
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+            <img src="../../assets/img/usuario.png" width=50% alt="">
+            <h1>Registrar</h1>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Tipo de Documento</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="docType">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Numero de Documento</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="docNum">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Nombres</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Apellidos</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="lastName">
+            </mat-form-field>
+        
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input type="email" matInput autocomplete="off" formControlName="email">
+            </mat-form-field>
+        
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="password">
+            </mat-form-field>
+
+            <button type="submit" class="ancho boton" mat-raised-button color="primary"  [disabled]="!registerForm.valid" (click)="register()">Registrar</button>
+    </form>
+        
+    </div>
+</div>
