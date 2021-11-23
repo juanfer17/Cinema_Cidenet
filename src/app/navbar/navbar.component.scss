@@ -1,3 +1,26 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+button{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+
 .example-spacer {
     flex: 1 1 auto;
   }
+
+.logo{
+  margin-left: 30px;
+  display: block;
+  width: 100px;
+  height: 100%;
+}
+
+mat-toolbar{
+  height: 100px;
+  position: fixed;
+}

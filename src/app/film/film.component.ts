@@ -14,8 +14,8 @@ export class FilmComponent implements OnInit {
     genreFilm:[null, Validators.required],
     urlImage:[null, Validators.required],
     duracion:[null, Validators.required],
-    activa: [null, Validators.required],
-    fechaFin: [null, Validators.required]
+    activa: [null],
+    fechaFin: [null]
   });
 
   constructor( private fb:FormBuilder, private serviceFilm: FilmService) { }
@@ -32,10 +32,14 @@ export class FilmComponent implements OnInit {
       activa: this.filmForm.get(['activa'])!.value,
       fechaFin: this.filmForm.get(['fechaFin'])!.value
     };
+    
+    
+    let dataRespuesta:any;
     this.serviceFilm.film(dataFilm).subscribe(response =>{
-      if(response.body?.status === '00'){
+      dataRespuesta = response;
+      if(dataRespuesta['status'] === '00'){
        console.log('Creacion de pelicula exitoso')
-      }else if(response.body?.status !== '00'){
+      }else if(dataRespuesta['status'] !== '00'){
         console.log('Creacion de pelicula fallido')
       }
     });

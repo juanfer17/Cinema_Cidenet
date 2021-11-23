@@ -13,16 +13,22 @@ export class FilmService {
 
   constructor(private http : HttpClient) { }
 
+  film(dataFilm : any):Observable<{}>{
 
+    const headers  = new HttpHeaders().set("Authorization", "juanfer");
 
-  film(dataFilm : any):Observable<EntityResponseGeneral>{
-    let headers = this.getHeaders();
-    return this.http.post<IResponseGeneral>("http://localhost:8080/film/create", dataFilm, {observe : 'response' , headers});
+    try{
+      return this.http.post<IResponseGeneral>('http://localhost:8080/film/create', dataFilm,{'headers': headers});
+    }catch(e){
+      return this.http.post<IResponseGeneral>('http://localhost:8080/film/create', dataFilm, {'headers': headers});
+    }
   }
 
   getHeaders():HttpHeaders{
     const token = localStorage.getItem('token');
+    console.log('Token tomado en Film    ' + token);
     let headers = new HttpHeaders();
+    headers = headers.set('Authorization','Bearer '+token)
     headers = headers.set('Content-Type', 'application/json');
     return headers;
   }

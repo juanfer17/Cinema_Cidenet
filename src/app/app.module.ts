@@ -26,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -56,7 +57,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatSnackBarModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
 
   ],
   providers: [],

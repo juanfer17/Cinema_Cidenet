@@ -1,4 +1,4 @@
-export interface IResponseGeneral{
-    status: string;
-    message: string;
+export class IResponseGeneral{
+    status?: string;
+    message?: string;
 }
